@@ -11,8 +11,8 @@ export default function RootLayout({
     <html>
       <head />
       <body>
-        <div className="dark:bg-neutral-900 h-screen">
-          <div className="mx-12 py-6 dark:bg-neutral-900">
+        <div className="dark:bg-neutral-900" style={{ minHeight: "100dvh" }}>
+          <div className="mx-2 sm:mx-6 md:mx-12 py-6 dark:bg-neutral-900 ">
             <ThemeProvider attribute="class">
               <Header />
               <div className="mt-8">{children}</div>

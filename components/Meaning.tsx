@@ -7,15 +7,17 @@ const Meaning = ({ partOfSpeech, definitions, synonyms }: Meaning) => {
     <>
       <Separator label={partOfSpeech} />
       <div className="text-gray-500 text-lg dark:text-neutral-600">Meaning</div>
-      <ul className="mx-10 my-6">
+      <ul className="mx-6 md:mx-10 my-6">
         {definitions?.map((elem, index) => (
           <li
             className="list-disc text-purple-500 dark:text-purple-500/80"
             key={index}
           >
-            <div className="text-black dark:text-white">{elem.definition}</div>
+            <div className="text-black dark:text-white break-words">
+              {elem.definition}
+            </div>
             {elem.example && (
-              <div className="text-neutral-600 mt-2">{`"${elem.example}"`}</div>
+              <div className="dark:text-neutral-600 text-neutral-600/50 mt-2 mb-4">{`"${elem.example}"`}</div>
             )}
           </li>
         ))}
@@ -25,9 +27,11 @@ const Meaning = ({ partOfSpeech, definitions, synonyms }: Meaning) => {
           <div className="text-gray-500 text-lg dark:text-neutral-600">
             Synonyms
           </div>
-          <div className="flex space-x-3 text-purple-500 text-lg font-bold dark:text-purple-500/80">
+          <div className="flex flex-wrap text-purple-500 text-lg font-bold dark:text-purple-500/80 break-words">
             {synonyms.map((synonym, index) => (
-              <div key={index}>{synonym}</div>
+              <div key={index} className="mr-3">
+                {synonym}
+              </div>
             ))}
           </div>
         </div>

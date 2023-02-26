@@ -28,7 +28,10 @@ export default function Home() {
         setIsError(false);
         setLoading(false);
       })
-      .catch((error) => setIsError(true));
+      .catch((error) => {
+        setIsError(true);
+        setData([]);
+      });
   };
 
   const response = data[0];
@@ -45,10 +48,10 @@ export default function Home() {
         <>
           <div className="relative mt-8 w-full">
             <div className="flex-col space-y-2">
-              <span className="text-5xl font-bold dark:text-white">
+              <span className="text-3xl md:text-5xl font-bold dark:text-white">
                 {response?.word}
               </span>
-              <div className="text-purple-500 font-medium text-xl dark:text-purple-500/80">
+              <div className="text-purple-500 font-medium text-lg md:text-xl dark:text-purple-500/80">
                 {response?.phonetic}
               </div>
             </div>
@@ -63,7 +66,7 @@ export default function Home() {
               <div className="text-neutral-500">Source</div>
               <div>
                 <a
-                  className="dark:text-white"
+                  className="dark:text-white truncate block max-w-max"
                   target="_blank"
                   href={`https://en.wiktionary.org/wiki/${response?.word}`}
                 >
