@@ -1,13 +1,12 @@
 import React from "react";
 import { RiPlayFill } from "react-icons/ri";
 
-const synth = window.speechSynthesis;
-
 type TextToSpeechProps = {
   text: string;
 };
 
 const TextToSpeech = ({ text }: TextToSpeechProps) => {
+  const synth = window.speechSynthesis;
   const speak = () => {
     if (synth.speaking) {
       console.error("Already speaking...");
