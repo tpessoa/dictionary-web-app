@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 
 type InputProps = {
